@@ -25,6 +25,7 @@ public class Picture {
     private Circle sunyellow;
     private int yPosition = -20;
     private int xPosition = 110;
+    private boolean terreFixe=true;
 
     /**
      * Constructor for objects of class Picture
@@ -97,9 +98,17 @@ public class Picture {
       
     /** soleil ( bleu) de se coucher */
     public void coucher(){
-    sun.slowMoveVertical(250);
+        
+            if(terreFixe == true){
+            sun.slowMoveVertical(250);
+            this.terreFixe = false;
+        } else {
+            sun.slowMoveVertical(-250);
+            this.terreFixe = true;
+        }
+   
+        }
     }
     
   
 
-}
